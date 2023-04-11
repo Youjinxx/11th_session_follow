@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<p>mainpage</p>
+<h1>hello</h1>
+<img src="C:\Users\User\Desktop\상속\likelion11th\likelion_11th\static\images\testimage.jpg" />
+
+<h1>글 목록</h1>
+{{blogs}}
+
+<h5>아니면,</h5>
+<div>
+    {% for blog in blogs %}
+    <div>
+        <h3>{{blog.title}}</h3>
+        {{blog.title}}<br>
+        {{blog.body}}<br>
+        <a href="{% url 'detail' blog.id %}">...자세히</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
